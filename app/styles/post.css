@@ -1,5 +1,5 @@
 /** Post **/
-.post{
+.post-unique{
     display: grid;
     grid-template-columns: 1fr;
     margin: 0 1rem;
@@ -8,19 +8,19 @@
 }
 
 @media (min-width:880px) {
-    .post{
+    .post-unique{
         grid-template-columns: 2fr 3fr;
         margin: auto 4rem;
     }
 }
-.post figure{
+.post-unique figure{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
 }
 
-.post .imagen{
+.post-unique .imagen{
     width: 100%;
     height: 100%;
     max-width: 700px;
@@ -28,16 +28,16 @@
     object-fit: cover;
 }
 
-.post .contenido{
+.post-unique .contenido{
     padding: 1rem;
 }
-.post .titulo{
+.post-unique .titulo{
     margin: 2rem 0;
 }
-.post .fecha{
+.post-unique .fecha{
     color: var(--primary);
 }
-.post .texto{
+.post-unique .texto{
     margin: 0;
     line-height: 1.6;
     white-space: pre-wrap;

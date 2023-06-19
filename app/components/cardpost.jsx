@@ -14,7 +14,7 @@ const CardPost = ({post}) => {
             <h2 className="titulo">{titulo}</h2>
             <p className="fecha">{fecha}</p>
             <p className="texto">{contenido}</p>
-            <Link className="enlace" to={`/posts/${url}`}>Ver blog</Link>
+            <Link className="enlace" to={`/blog/${url}`}>Ver blog</Link>
         </div>
     </article>
   )

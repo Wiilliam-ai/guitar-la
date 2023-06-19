@@ -1,7 +1,7 @@
 import Card from "./card"
 
-const ListadoGuitarras = ({guitarras}) => {
-  const guitarraPrincipal = guitarras.slice(0,3)
+const ListadoGuitarras = ({guitarras,cantidad}) => {
+  const guitarraPrincipal = guitarras.slice(0,cantidad===0?guitarras.length:cantidad)
   return (
     <>
     <h2 className="heading">Nuestra Coleccion</h2>

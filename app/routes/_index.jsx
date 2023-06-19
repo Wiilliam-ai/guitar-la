@@ -50,12 +50,12 @@ const Index = () => {
   return (
     <>
       <main className="contenedor">
-          <ListadoGuitarras guitarras={guitarras}/>
-          <Link className="boton boton-enlace" to='/tienda' >Ver Mas</Link>
+          <ListadoGuitarras guitarras={guitarras} cantidad={3}/>
+          <Link className="boton boton-enlace" to='/guitarras' >Ver Mas</Link>
       </main>
       <Curso curso={curso?.attributes} />
       <section className="contenedor">
-        <ListadoPosts posts={posts}/>
+        <ListadoPosts posts={posts} cantidad={3}/>
         <Link className="boton boton-enlace" to='/blog' >Ver Mas</Link>
       </section>
     </>

@@ -1,16 +1,6 @@
 import { useLoaderData } from "@remix-run/react"
 import { formatearFecha } from "~/helpers/helpers"
 import { obtenerPost } from "~/models/posts.server"
-import postCss from '../styles/post.css'
-
-export function links(){
-    return[
-      {
-        rel: 'stylesheet',
-        href: postCss
-      }
-    ]
-  }
 
 export async function loader({params}){
     const {postUrl} = params
@@ -52,7 +42,7 @@ const PostUrl = () => {
     const imgPost = imagen.data.attributes.formats.medium.url
     const fecha = formatearFecha(publishedAt)
   return (
-    <article className="post">
+    <article className="post-unique">
         <figure>
             <img className="imagen" src={imgPost} alt={titulo} />
         </figure>
