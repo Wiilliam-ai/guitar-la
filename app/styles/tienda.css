@@ -17,9 +17,17 @@
         grid-template-columns: repeat(3,1fr);
     }
 }
+.guitarra img{
+    /*width: 100%;
+    height: 100%;
+    margin-right: 30rem;*/
+    max-height: 20rem;
+    margin: 0 auto;
+}
+
 .guitarra{
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
     align-items: center;
     border-radius: .5rem;
@@ -27,6 +35,16 @@
     max-width: 60rem;
     margin:0 auto;
 }
+
+@media (min-width:488px) {
+    .guitarra{
+        grid-template-columns: 2fr 3fr;
+    }
+    .guitarra img{
+        max-height: max-content;
+    }
+}
+
 
 .guitarra .contenido{
     padding: 1rem;
@@ -66,4 +84,38 @@
 .guitarra .enlace:hover{
     background-color: var(--primary);
     color: var(--white);
+}
+
+/** Guitarras **/
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.formulario label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.formulario select{
+    width: 100%;
+    text-align: center;
+    padding: .8rem 0;
+}
+
+.formulario input[type="submit"]{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 400;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover{
+    background-color: var(--primary);
 }

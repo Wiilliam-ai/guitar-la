@@ -12,6 +12,8 @@ export function meta() {
       keywords: ['Guitarras','Musica','Aprende Musica','Compra Guitarra']
     },{
       author: 'Guitar La' 
+    },{
+      viewport: "width=device-width, initial-scale=1"
     }
   ]
 }

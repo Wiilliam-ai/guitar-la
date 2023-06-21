@@ -13,6 +13,8 @@ export function meta() {
       keywords: ['Guitarra Clapton','Guitarra Beck','Guitarra Morello','Guitarra Borland']
     },{
       author: 'Guitar La' 
+    },{
+      viewport: "width=device-width, initial-scale=1"
     }
   ]
 }

@@ -22,6 +22,9 @@ export function meta({data}) {
         },
         {
           description: `Contamos guitarra no encontrada`
+        },
+        {
+          viewport: "width=device-width, initial-scale=1"
         }
       ]
     }

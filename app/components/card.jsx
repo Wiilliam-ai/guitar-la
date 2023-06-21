@@ -2,10 +2,10 @@ import { Link } from "@remix-run/react"
 
 const Card = ({guitarra}) => {
   const {nombre,precio,descripcion,imagen,url} = guitarra
-  const imgGuitarra = imagen.data.attributes.formats.medium.url
+  const imgGuitarra = imagen.data.attributes.formats.small.url
   return (
     <div className="guitarra">
-        <img src={imgGuitarra} alt={`Imagen guitarra ${nombre}`} />
+        <img src={imgGuitarra} alt={`Imagen guitarra ${nombre}`} loading="lazy"/>
         <div className="contenido">
             <h3>{nombre}</h3>
             <p className="descripcion">{descripcion}</p>

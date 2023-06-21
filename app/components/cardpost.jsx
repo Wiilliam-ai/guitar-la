@@ -8,7 +8,7 @@ const CardPost = ({post}) => {
   return (
     <article className="post">
         <figure>
-            <img className="imagen" src={imgPost} alt={titulo} />
+            <img className="imagen" src={imgPost} alt={titulo} loading="lazy"/>
         </figure>
         <div className="contenido">
             <h2 className="titulo">{titulo}</h2>

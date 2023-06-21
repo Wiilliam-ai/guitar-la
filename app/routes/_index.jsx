@@ -10,7 +10,17 @@ import { obtenerCurso } from "~/models/cursos.server"
 import Curso from "~/components/curso"
 
 export function meta(){
-
+  return [
+    { 
+      title: `Guitar La` 
+    },
+    {
+      description: `Pagina de guitarras`
+    },
+    {
+      viewport: "width=device-width, initial-scale=1"
+    }
+  ]
 }
 
 export function links(){

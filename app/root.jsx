@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react' 
 import {
     Meta,
     Links,
@@ -17,7 +18,7 @@ export function meta(){
     return [
         { charset: 'uft-8' },
         { title: 'Guitar La - Remix' },
-        { viewport: 'width=device-width,initial-scale=1.0' }
+        { viewport: "width=device-width, initial-scale=1" }
     ]
 }
 
@@ -48,9 +49,55 @@ export function links(){
 }
 
 export default function App() {
+  const carritoLS = typeof window !== 'undefined' && JSON.parse(localStorage.getItem('carrito')) || []
+  const [carrito, setCarrito] = useState(carritoLS)
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+      }
+  }, [carrito])
+  
+
+  const agregarCarrito = guitarra =>{
+    if(carrito.some(guitarraState => guitarraState.id === guitarra.id)){
+        const carritoActualizado = carrito.map(guitarraState =>{
+            if (guitarraState.id === guitarra.id) {
+                guitarraState.cantidad = guitarra.cantidad
+            }
+            return guitarraState
+        })
+        setCarrito(carritoActualizado)
+    }else{
+        setCarrito([...carrito,guitarra])
+    }
+  }
+
+  const actualizarCantidad = guitarra =>{
+    const carritoActualizado = carrito.map(carritoState => {
+        if (carritoState.id === guitarra.id) {
+            carritoState.cantidad = guitarra.cantidad
+        }
+        return carritoState
+    })
+    setCarrito(carritoActualizado)
+  }
+
+  const eliminarProducto = id =>{
+    const eliminarCarrito = carrito.filter(e => e.id !== id)
+    setCarrito(eliminarCarrito)
+  }
+
   return (
     <Document>
-        <Outlet/>
+        <Outlet
+            context={{
+                agregarCarrito,
+                carrito,
+                actualizarCantidad,
+                eliminarProducto,
+            }}
+            />
     </Document>
   )
 }
